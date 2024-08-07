@@ -72,6 +72,7 @@ class TikTokHttpClient {
 
     async getJsonObjectFromWebcastApi(path, params, shouldSign) {
         let url = await this.#buildUrl(Config.TIKTOK_URL_WEBCAST, path, params, shouldSign);
+        console.log("URL is" + url);
         let response = await this.#get(url, 'json');
         return response.data;
     }
